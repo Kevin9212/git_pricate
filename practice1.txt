@@ -40,3 +40,53 @@ $ git remote -v
 $ git push git_practice master:master # == $ git push git_practice master
 
 回到GitHub上可以看到”practice1.txt”已經被push上去。
+
+
+----------------------------更新檔案-----------------------------
+打开 Git Bash 并进入项目目录：
+$ cd /d/git_practice
+
+检查文件状态：
+$ gti status
+
+添加更新的文件：
+$ git add practice1.txt
+
+提交更改：
+$ git commit -m "Update practice1.txt"
+
+确保你在正确的分支上工作:
+$ git branch
+# * master
+
+查看当前项目的远程仓库配置：
+$ git remote -v
+# git_practice    https://github.com/Kevin9212/git_pricate.git (fetch)
+# git_practice    https://github.com/Kevin9212/git_pricate.git (push)
+
+如果没有配置远程仓库，或者显示的远程仓库 URL 不正确，可以用以下命令设置或更新：
+** 如果没有配置远程仓库，或者显示的远程仓库 URL 不正确，可以用以下命令设置或更新：
+	 git remote add origin https://github.com/yourusername/your-repository.git
+
+** 如果远程仓库已经存在，但 URL 错误，你可以更新它：
+	 git remote set-url origin https://github.com/yourusername/your-repository.git
+
+验证远程仓库连接：
+$ git remote show git_practice
+
+# * remote git_practice
+#  Fetch URL: https://github.com/Kevin9212/git_pricate.git
+#  Push  URL: https://github.com/Kevin9212/git_pricate.git
+#  HEAD branch: master
+#  Remote branch:
+#    master tracked
+#  Local ref configured for 'git push':
+#    master pushes to master (up to date)
+
+推送更改到远程仓库：
+$ git push git_practice master
+
+
+
+
+
