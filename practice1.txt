@@ -1,0 +1,42 @@
+假設把”D:\git_practice\practice1.txt”是我們要處理的檔案：
+$ cd /d/git_practice
+
+確認目前工作目錄：	
+$ pwd
+
+第一次使用Git的話，要先使用指令:
+$ git config --global user.name "[user name]"
+$ git config --global user.email "[user email]"
+
+在"git_practice"中新增加一個Repository:
+$ git init
+
+查看目前所以"git_practice"下的檔案:
+$ ls -a
+
+查看目前Repository的狀況:
+$ git status
+
+使用指令把檔案加入追蹤清單:
+$ gti add practice1.txt
+
+把”practice1”提交到Repository中: 
+$ git commit -m"message"	--"可以填你要寫的訊息"
+
+系統提示我們一個檔案已經被提交，使用git status確認一下:
+$ git status
+
+去GitHub創建一個Repository,然後回到Git Bash:
+(假如是第一次與那個帳號建立連結的話，需要輸入帳號密碼)
+$ git remote add git_practice https://github.com/Kevin9212/xxxxx/git_practice.git
+
+$ git remote -v
+可以看到已經成功與GitHub帳號上的專案連結。
+不知道大家有沒有注意到我們的user資訊最後面都有個”(master)”，
+這代表我們目前位在”master”這個分支(Branch)上，
+我們使用push是把local某個分支的Repository內的所有檔案傳到對應的GitHub帳號的專案中
+# git push [remote space name] [branch in local]:[branch in remote]
+# about [branch in remote] 1) 如果指定的 branch 在 remote 上不存在 => 建立一個同名的 branch 2) 如果指定的 branch 在 remote 上存在 => 更新此 branch 的進度
+$ git push git_practice master:master # == $ git push git_practice master
+
+回到GitHub上可以看到”practice1.txt”已經被push上去。
